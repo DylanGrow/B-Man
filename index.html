@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bomberman – Fast, Secure PWA Game</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Play a fast, secure Bomberman-style game in your browser. Offline-ready, no tracking.">
+  <meta name="robots" content="index,follow">
+
+  <!-- Strict CSP via meta (limited but better than nothing on GitHub Pages) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="
+          default-src 'self';
+          script-src 'self';
+          style-src 'self';
+          img-src 'self' data:;
+          connect-src 'self';
+          object-src 'none';
+          frame-ancestors 'none';
+          base-uri 'self';
+          form-action 'self';
+        ">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Local favicon only -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- Local CSS (Tailwind build output) -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased">
+  <main class="min-h-screen flex flex-col items-center justify-center">
+    <h1 class="text-3xl font-bold mb-4">Bomberman</h1>
+    <canvas id="game" width="640" height="480" class="border border-slate-700"></canvas>
+    <p class="mt-4 text-sm text-slate-400">
+      Offline-ready, no trackers, no remote fonts.
+    </p>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
